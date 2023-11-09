@@ -3,7 +3,7 @@ package ${package}.${moduleName}.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import ${package}.common.utils.PageResult;
+import ${package}.common.page.PageResult;
 import ${package}.common.utils.Result;
 import ${package}.${moduleName}.convert.${ClassName}Convert;
 import ${package}.${moduleName}.entity.${ClassName}Entity;

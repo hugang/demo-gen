@@ -1,6 +1,6 @@
 package ${package}.${moduleName}.service;
 
-import ${package}.common.utils.PageResult;
+import ${package}.common.page.PageResult;
 import ${package}.common.service.BaseService;
 import ${package}.${moduleName}.vo.${ClassName}VO;
 import ${package}.${moduleName}.query.${ClassName}Query;
