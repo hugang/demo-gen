@@ -1,0 +1,49 @@
+server:
+  port: 8088
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    # MySQL
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.0.106:3306/demo-generator?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Tokyo&nullCatalogMeansCurrent=true
+    username: root
+    password: 123456
+    # Oracle
+    #    driver-class-name: oracle.jdbc.OracleDriver
+    #    url: jdbc:oracle:thin:@localhost:1521:xe
+    #    username: demo_generator
+    #    password: demo_generator
+    # SQLServer
+    #    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    #    url: jdbc:sqlserver://localhost:1433;DatabaseName=demo_generator;encrypt=true;trustServerCertificate=true
+    #    username: sa
+    #    password: 123456@demo
+    # postgresql
+    #    driver-class-name: org.postgresql.Driver
+    #    url: jdbc:postgresql://localhost:5432/postgres
+    #    username: postgres
+    #    password: 123456
+
+
+# 需要指定对应的模板
+generator:
+  template: /template/demo-boot
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  typeAliasesPackage: io.hugang.demo.generator.entity
+  global-config:
+    db-config:
+      id-type: AUTO
+    banner: false
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+  configuration-properties:
+    prefix:
+    blobType: BLOB
+    boolValue: TRUE
