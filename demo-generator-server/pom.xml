@@ -7,6 +7,7 @@
         <groupId>io.hugang</groupId>
         <artifactId>demo-generator</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>demo-generator-server</artifactId>
@@ -15,7 +16,6 @@
         <dependency>
             <groupId>io.hugang</groupId>
             <artifactId>demo-generator-core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

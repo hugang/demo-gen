@@ -3,7 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>io.hugang</groupId>
     <artifactId>demo-generator</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
         <module>demo-generator-core</module>
@@ -11,10 +13,75 @@
     </modules>
 
     <parent>
-        <groupId>io.hugang</groupId>
-        <artifactId>demo-dependencies</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <mybatisplus.version>3.5.4</mybatisplus.version>
+        <!--        &lt;!&ndash; 项目编码 &ndash;&gt;-->
+        <!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+        <!--        <mysql.version>8.0.33</mysql.version>-->
+        <!--        <redisson.version>3.24.3</redisson.version>-->
+        <!--        <knife4j.version>4.3.0</knife4j.version>-->
+        <!--        <easyexcel.version>3.3.2</easyexcel.version>-->
+        <!--        <mapstruct.version>1.5.5.Final</mapstruct.version>-->
+        <hutool.version>5.8.22</hutool.version>
+        <!--        <easytrans.version>2.2.9</easytrans.version>-->
+        <!--        <mybatisplus.version>3.5.4</mybatisplus.version>-->
+        <!--        <dynamic-datasource.version>4.2.0</dynamic-datasource.version>-->
+        <!--        <minio.version>8.5.6</minio.version>-->
+        <!--        <captcha.version>1.6.2</captcha.version>-->
+        <!--        <jsoup.version>1.16.2</jsoup.version>-->
+        <!--        <oshi.version>6.4.6</oshi.version>-->
+        <!--        <freemarker.version>2.3.32</freemarker.version>-->
+        <!--        &lt;!&ndash; spring boot &ndash;&gt;-->
+        <!--        <spring-boot.version>3.1.5</spring-boot.version>-->
+        <!--        &lt;!&ndash; spring cloud &ndash;&gt;-->
+        <!--        <spring-cloud.version>2022.0.4</spring-cloud.version>-->
+
+        <!--        &lt;!&ndash; apache commons &ndash;&gt;-->
+        <!--        <commons-lang3.version>3.12.0</commons-lang3.version>-->
+        <!--        <commons-io.version>2.11.0</commons-io.version>-->
+        <!--        <commons-codec.version>1.15</commons-codec.version>-->
+        <!--        <commons-collections4.version>4.4</commons-collections4.version>-->
+        <!--        <commons-beanutils.version>1.9.4</commons-beanutils.version>-->
+        <!--        <commons-dbcp2.version>2.9.0</commons-dbcp2.version>-->
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- mybatis-plus-boot-starter -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+            <!-- hutool-all -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.hugang</groupId>
+                <artifactId>demo-generator-core</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 </project>
